@@ -269,11 +269,6 @@
 /obj/effect/turf_decal/box/red,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security/range)
-"hF" = (
-/obj/structure/table/reinforced,
-/obj/machinery/fax/indie,
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 "hH" = (
 /obj/machinery/computer/helm,
 /turf/open/floor/plasteel/dark,
@@ -1290,6 +1285,11 @@
 /obj/effect/turf_decal/box/red,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security/range)
+"Ho" = (
+/obj/structure/table/reinforced,
+/obj/machinery/fax/indie,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "Hq" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -2474,7 +2474,7 @@ UG
 "}
 (10,1,1) = {"
 UX
-hF
+Ho
 pK
 eJ
 Wc

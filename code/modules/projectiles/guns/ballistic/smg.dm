@@ -10,6 +10,8 @@
 
 	wield_delay = 0.4 SECONDS
 
+	wield_delay = 0.4 SECONDS
+
 	load_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
 	load_empty_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
 	eject_sound = 'sound/weapons/gun/smg/smg_unload.ogg'

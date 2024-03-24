@@ -268,6 +268,22 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"ep" = (
+/obj/structure/table/reinforced,
+/obj/item/radio/intercom/directional/east{
+	pixel_y = 7
+	},
+/obj/item/toy/figure/syndie{
+	pixel_x = 11;
+	pixel_y = -3
+	},
+/obj/machinery/fax/syndicate,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
 "fg" = (
 /obj/structure/sign/number/eight{
 	pixel_y = 5
@@ -1913,24 +1929,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
-"FR" = (
-/obj/structure/table/reinforced,
-/obj/item/flashlight/lamp{
-	pixel_x = -12;
-	pixel_y = 7
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/paper_bin/carbon,
-/obj/item/folder/documents/syndicate/red,
-/obj/item/pen/fountain/captain,
-/obj/item/stamp/hos{
-	name = "captain's rubber stamp"
-	},
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/bridge)
 "Ge" = (
 /obj/structure/bed,
 /obj/item/bedsheet/black,
@@ -2134,6 +2132,24 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
+"Kd" = (
+/obj/structure/table/reinforced,
+/obj/item/flashlight/lamp{
+	pixel_x = -12;
+	pixel_y = 7
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/paper_bin/carbon,
+/obj/item/folder/documents/syndicate/red,
+/obj/item/pen/fountain/captain,
+/obj/item/stamp/hos{
+	name = "captain's rubber stamp"
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
 "Kf" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/storage)
@@ -2543,22 +2559,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/storage)
-"Rl" = (
-/obj/structure/table/reinforced,
-/obj/item/radio/intercom/directional/east{
-	pixel_y = 7
-	},
-/obj/item/toy/figure/syndie{
-	pixel_x = 11;
-	pixel_y = -3
-	},
-/obj/machinery/fax/syndicate,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/bridge)
 "RD" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Port Thrusters";
@@ -3809,7 +3809,7 @@ mL
 (25,1,1) = {"
 nn
 oz
-FR
+Kd
 kM
 pH
 ch
@@ -3830,7 +3830,7 @@ mL
 (26,1,1) = {"
 nn
 oz
-Rl
+ep
 Ui
 ch
 Nl

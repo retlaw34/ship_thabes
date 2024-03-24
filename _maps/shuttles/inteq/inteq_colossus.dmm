@@ -113,30 +113,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
-"bJ" = (
-/obj/structure/table/reinforced,
-/obj/machinery/fax/inteq,
-/obj/machinery/light/directional/north,
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/borderfloor{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 1
-	},
-/obj/machinery/button/door{
-	id = "colossus_windows";
-	name = "Window Lockdown";
-	pixel_x = -4;
-	pixel_y = 21
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 "bN" = (
 /obj/structure/closet/secure_closet{
 	icon_state = "armory";
@@ -1808,23 +1784,6 @@
 /obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"tR" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/green/hidden{
-	dir = 8
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/item/storage/toolbox/mechanical,
-/obj/item/clothing/glasses/welding,
-/obj/structure/table,
-/obj/structure/sign/warning/nosmoking{
-	pixel_x = -32
-	},
-/obj/machinery/cell_charger,
-/turf/open/floor/plating,
-/area/ship/engineering)
 "tX" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
@@ -3153,6 +3112,22 @@
 "JD" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
+"JI" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/green/hidden{
+	dir = 8
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/clothing/glasses/welding,
+/obj/structure/table,
+/obj/structure/sign/warning/nosmoking{
+	pixel_x = -32
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "JM" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3902,6 +3877,30 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
+"RP" = (
+/obj/structure/table/reinforced,
+/obj/machinery/fax/inteq,
+/obj/machinery/light/directional/north,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/obj/machinery/button/door{
+	id = "colossus_windows";
+	name = "Window Lockdown";
+	pixel_x = -4;
+	pixel_y = 21
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "RW" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 8
@@ -4707,7 +4706,7 @@ Ru
 Zv
 zZ
 qK
-tR
+JI
 bq
 rl
 Ho
@@ -5336,7 +5335,7 @@ XJ
 XJ
 XJ
 tX
-bJ
+RP
 uy
 gE
 tX

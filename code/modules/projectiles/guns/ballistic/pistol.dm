@@ -334,3 +334,93 @@
 	recoil_unwielded = -2
 	spread_unwielded = 0
 	wield_slowdown = 0
+
+/obj/item/gun/ballistic/automatic/pistol/ashfire
+	name = "\improper HP Ashfire"
+	desc = "A strangely ancient and complex pistol. It uses stripper clips to reload, or simply load it one by one. Chambered in 9mm."
+	icon_state = "ashfire"
+	item_state = "hp_generic_fresh"
+	w_class = WEIGHT_CLASS_NORMAL
+	mag_type = /obj/item/ammo_box/magazine/internal/ashfire
+	internal_magazine = TRUE
+	can_suppress = FALSE
+	fire_sound = 'sound/weapons/gun/revolver/shot_light.ogg'
+	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
+	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
+	manufacturer = MANUFACTURER_NONE
+	load_sound = 'sound/weapons/gun/general/magazine_insert_full.ogg'
+	load_empty_sound = 'sound/weapons/gun/general/magazine_insert_full.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
+	spread = 6
+	spread_unwielded = 9
+
+/obj/item/ammo_box/magazine/internal/ashfire
+	name = "ashfire internal magazine"
+	desc = "Oh god, this shouldn't be here"
+	ammo_type = /obj/item/ammo_casing/c9mm
+	caliber = "9mm"
+	max_ammo = 10
+	instant_load = TRUE
+
+// 9mm Stripper Clip (Ashfire)
+
+/obj/item/ammo_box/stripper_9mm
+	name = "stripper clip (9mm)"
+	desc = "A 10-round stripper clip for the Ashfire pistol."
+	icon_state = "stripper_9mm"
+	ammo_type = /obj/item/ammo_casing/c9mm
+	max_ammo = 10
+	multiple_sprites = AMMO_BOX_PER_BULLET
+	instant_load = TRUE
+
+/obj/item/gun/ballistic/automatic/pistol/mauler
+	name = "Mauler machine pistol"
+	desc = "A full auto machine pistol. It has insane stopping power, although it is mostly useless with outside of CQC and anything with armor. Chambered in 9mm."
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon_state = "mauler"
+	item_state = "hp_generic"
+	w_class = WEIGHT_CLASS_NORMAL
+	mag_type = /obj/item/ammo_box/magazine/m9mm_mauler
+	can_suppress = FALSE
+	fire_delay = 0
+
+	spread = 30
+	spread_unwielded = 50
+	recoil = 1
+	recoil_unwielded = 4
+
+//	lefthand_file = 'modular_thabes/modules/thabes_guns/icons/inhands/lefthand_guns.dmi'
+//	righthand_file = 'modular_thabes/modules/thabes_guns/icons/inhands/righthand_guns.dmi'
+	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
+
+	load_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
+
+/obj/item/gun/ballistic/automatic/pistol/mauler/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.06 SECONDS)
+
+/obj/item/gun/ballistic/automatic/pistol/mauler/factory
+	desc = "A full auto machine pistol. It has insane stopping power, although it is mostly useless with outside of CQC and anything with armor. This example has been kept in especially good shape, and may as well be fresh out of the workshop. Chambered in 9mm."
+	item_state = "hp_generic_fresh"
+
+/obj/item/gun/ballistic/automatic/pistol/mauler/factory/update_overlays()
+	. = ..()
+	. += "[initial(icon_state)]_factory"
+
+/obj/item/ammo_box/magazine/m9mm_mauler
+	name = "mauler machine pistol magazine (9mm)"
+	desc = "A long, 12-round magazine designed for the Mauler 'Stop' pistol. These rounds do okay damage, but struggle against armor."
+	icon_state = "mauler_mag-1"
+	base_icon_state = "mauler_mag"
+	ammo_type = /obj/item/ammo_casing/c9mm
+	caliber = "9mm"
+	max_ammo = 12
+
+/obj/item/ammo_box/magazine/m9mm_mauler/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[!!ammo_count()]"

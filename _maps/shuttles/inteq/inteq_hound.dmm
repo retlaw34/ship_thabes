@@ -342,15 +342,6 @@
 "hi" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew)
-"hJ" = (
-/obj/docking_port/stationary{
-	width = 30;
-	height = 15;
-	dwidth = 15;
-	dir = 8
-	},
-/turf/template_noop,
-/area/template_noop)
 "hK" = (
 /obj/machinery/suit_storage_unit/inherit{
 	req_access_txt = "1"
@@ -478,6 +469,17 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"ly" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "hound_windows"
+	},
+/turf/open/floor/plating,
+/area/ship/storage/eva)
 "lZ" = (
 /obj/machinery/suit_storage_unit/inherit{
 	req_access_txt = "1"
@@ -843,14 +845,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/eva)
-"tg" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor{
-	id = "hound_windows";
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/port)
 "tq" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -1230,6 +1224,25 @@
 "Ao" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/maintenance/port)
+"Ay" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "hound_windows"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/window/eastright{
+	name = "Engine Access"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "AQ" = (
 /obj/structure/railing/corner,
 /obj/structure/catwalk/over/plated_catwalk,
@@ -1262,6 +1275,27 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew)
+"Bk" = (
+/obj/machinery/button/door{
+	id = "hound_windows";
+	name = "Window Lockdown";
+	pixel_x = -10;
+	pixel_y = 22
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals_central4,
+/obj/machinery/computer/cargo/express,
+/obj/item/radio/intercom/wideband/directional/north{
+	pixel_x = 6;
+	pixel_y = 25
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "BA" = (
 /obj/structure/railing,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1326,6 +1360,12 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/maintenance/starboard)
+"CU" = (
+/obj/structure/table/reinforced,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/fax/inteq,
+/turf/open/floor/carpet/orange,
+/area/ship/bridge)
 "CV" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
@@ -1403,6 +1443,14 @@
 	},
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
+"Ex" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "hound_windows"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
 "EC" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -1574,27 +1622,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"HV" = (
-/obj/machinery/button/door{
-	id = "hound_windows";
-	name = "Window Lockdown";
-	pixel_x = -10;
-	pixel_y = 22
-	},
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/steeldecal/steel_decals_central4,
-/obj/machinery/computer/cargo/express,
-/obj/item/radio/intercom/wideband/directional/north{
-	pixel_y = 25;
-	pixel_x = 6
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 "HZ" = (
 /obj/effect/turf_decal/siding/thinplating/corner{
 	dir = 8
@@ -1624,25 +1651,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"Iw" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	id = "hound_windows";
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/door/window/eastright{
-	name = "Engine Access"
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "ID" = (
 /obj/structure/sign/number/one,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -1697,25 +1705,6 @@
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"Jv" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	id = "hound_windows";
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/door/window/eastleft{
-	name = "Engine Access"
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/port)
 "JJ" = (
 /obj/machinery/door/airlock/external{
 	dir = 4
@@ -1729,25 +1718,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/eva)
-"JX" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	id = "hound_windows";
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/door/window/eastleft{
-	name = "Engine Access"
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "Kd" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
@@ -1826,6 +1796,25 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/eva)
+"MI" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "hound_windows"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/window/eastleft{
+	name = "Engine Access"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "MK" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/power/shieldwallgen/atmos{
@@ -1853,17 +1842,6 @@
 /obj/structure/sign/warning/vacuum/external,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/storage/eva)
-"Nd" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	id = "hound_windows";
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "Ng" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 1
@@ -1962,17 +1940,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
-"OP" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	id = "hound_windows";
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/storage/eva)
 "Pc" = (
 /obj/structure/railing{
 	dir = 8
@@ -2072,31 +2039,6 @@
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/dorm)
-"Rh" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	id = "hound_windows";
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/door/window/eastright{
-	name = "Engine Access"
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/port)
-"RM" = (
-/obj/structure/table/reinforced,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/fax/inteq,
-/turf/open/floor/carpet/orange,
-/area/ship/bridge)
 "Sh" = (
 /obj/structure/railing{
 	dir = 4
@@ -2217,6 +2159,15 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew)
+"Vq" = (
+/obj/docking_port/stationary{
+	dir = 8;
+	dwidth = 15;
+	height = 15;
+	width = 30
+	},
+/turf/template_noop,
+/area/template_noop)
 "Vv" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/toilet)
@@ -2322,6 +2273,17 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
+"Xu" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "hound_windows"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "Xw" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
@@ -2367,6 +2329,44 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/eva)
+"YQ" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "hound_windows"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/window/eastright{
+	name = "Engine Access"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"YS" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "hound_windows"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/window/eastleft{
+	name = "Engine Access"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
 "Za" = (
 /obj/structure/sink{
 	dir = 8;
@@ -2420,7 +2420,7 @@ ib
 ib
 ib
 ib
-hJ
+Vq
 ib
 ib
 ib
@@ -2441,7 +2441,7 @@ ib
 xm
 xm
 Ky
-OP
+ly
 xm
 xm
 ib
@@ -2453,8 +2453,8 @@ cX
 "}
 (3,1,1) = {"
 ih
-Jv
-Rh
+YS
+YQ
 ih
 ib
 gO
@@ -2467,8 +2467,8 @@ xm
 gO
 ib
 cX
-JX
-Iw
+MI
+Ay
 cX
 "}
 (4,1,1) = {"
@@ -2496,7 +2496,7 @@ ih
 ZR
 oq
 ih
-tg
+Ex
 ih
 lZ
 VO
@@ -2505,7 +2505,7 @@ sv
 hK
 nq
 cX
-Nd
+Xu
 cX
 Qn
 go
@@ -2836,7 +2836,7 @@ ib
 ib
 ib
 aX
-RM
+CU
 fq
 BL
 pe
@@ -2876,7 +2876,7 @@ ib
 ib
 ib
 pe
-HV
+Bk
 KK
 BQ
 iw
