@@ -26,14 +26,22 @@
 		/obj/effect/mob_spawn/human/corpse/damaged/whitesands/survivor
 	)
 
+/mob/living/simple_animal/hostile/asteroid/whitesands/survivor/Initialize(mapload)
+	. = ..()
+	var/mob/living/carbon/human/ai_boarder/hermit/survivor/newhermit = new(loc)
+	newhermit.faction = faction.Copy()
+	return INITIALIZE_HINT_QDEL
+
+
 /mob/living/simple_animal/hostile/human/hermit/survivor/random/Initialize()
 	. = ..()
-	if(prob(35))
-		new /mob/living/simple_animal/hostile/human/hermit/ranged/hunter(loc)
-		return INITIALIZE_HINT_QDEL
 	if(prob(10))
-		new /mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger(loc)
-		return INITIALIZE_HINT_QDEL
+		new /mob/living/carbon/human/ai_boarder/hermit/hunter(loc)
+	else if(prob(3))
+		new /mob/living/carbon/human/ai_boarder/hermit/gunslinger(loc)
+	else if(prob(15))
+		new /mob/living/carbon/human/ai_boarder/hermit/survivor(loc)
+	return INITIALIZE_HINT_QDEL
 
 /mob/living/simple_animal/hostile/human/hermit/ranged
 	icon_state = "survivor_hunter"
@@ -53,6 +61,12 @@
 		/obj/effect/mob_spawn/human/corpse/damaged/whitesands/hunter,
 	)
 
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter/Initialize(mapload)
+	. = ..()
+	var/mob/living/carbon/human/ai_boarder/hermit/hunter/newhermit = new(loc)
+	newhermit.faction = faction.Copy()
+	return INITIALIZE_HINT_QDEL
+
 /mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger
 	name = "Hermit Soldier"
 	desc = "The miner's rebellion, though mostly underground, recieved a few good weapon shipments from an off-sector source. You should probably start running."
@@ -66,6 +80,12 @@
 	loot = list(
 		/obj/effect/mob_spawn/human/corpse/damaged/whitesands/gunslinger,
 	)
+
+/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/gunslinger/Initialize(mapload)
+	. = ..()
+	var/mob/living/carbon/human/ai_boarder/hermit/gunslinger/newhermit = new(loc)
+	newhermit.faction = faction.Copy()
+	return INITIALIZE_HINT_QDEL
 
 //survivor corpses
 
