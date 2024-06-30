@@ -1175,6 +1175,7 @@
 	},
 /obj/item/clothing/under/syndicate/hardliners,
 /obj/item/clothing/suit/hazardvest/hardliners,
+/obj/item/gun/energy/plasmacutter,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "ls" = (
@@ -2732,7 +2733,7 @@
 /obj/effect/turf_decal/industrial/fire{
 	dir = 8
 	},
-/obj/structure/guncase,
+/obj/structure/guncloset,
 /obj/structure/railing,
 /obj/item/gun/ballistic/automatic/smg/c20r,
 /obj/machinery/light/directional/east,
