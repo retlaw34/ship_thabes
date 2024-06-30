@@ -7,6 +7,9 @@
 /datum/overmap/dynamic
 	name = "weak energy signature"
 	char_rep = "?"
+
+	interaction_options = list(INTERACTION_OVERMAP_DOCK, INTERACTION_OVERMAP_QUICKDOCK)
+
 	///The active turf reservation, if there is one
 	var/datum/map_zone/mapzone
 	///The preset ruin template to load, if/when it is loaded.
@@ -72,22 +75,29 @@
 	if(reserve_docks)
 		return get_turf(pick(reserve_docks))
 
-/datum/overmap/dynamic/pre_docked(datum/overmap/ship/controlled/dock_requester)
+/datum/overmap/dynamic/pre_docked(datum/overmap/ship/controlled/dock_requester, override_dock)
 	if(loading)
 		return new /datum/docking_ticket(_docking_error = "[src] is currently being scanned for suitable docking locations by another ship. Please wait.")
 	if(!load_level())
 		return new /datum/docking_ticket(_docking_error = "[src] cannot be docked to.")
 	else
-		var/dock_to_use = null
-		for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
-			if(!dock.docked)
-				dock_to_use = dock
-				break
+		var/dock_to_use = override_dock
+		if(!override_dock)
+			for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
+				if(!dock.docked)
+					dock_to_use = dock
+					break
 
 		if(!dock_to_use)
 			return new /datum/docking_ticket(_docking_error = "[src] does not have any free docks. Aborting docking.")
-		adjust_dock_to_shuttle(dock_to_use, dock_requester.shuttle_port)
 		return new /datum/docking_ticket(dock_to_use, src, dock_requester)
+
+/datum/overmap/dynamic/get_dockable_locations(datum/overmap/requesting_interactor)
+	var/list/docks = list()
+	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
+		if(!dock.docked && !dock.current_docking_ticket)
+			LAZYADD(docks, dock)
+	return docks
 
 /datum/overmap/dynamic/post_docked(datum/overmap/ship/controlled/dock_requester)
 	if(planet_name)
@@ -105,7 +115,7 @@
 		return //Dont fuck over stranded people
 
 	log_shuttle("[src] [REF(src)] UNLOAD")
-	var/list/results = SSovermap.get_unused_overmap_square()
+	var/list/results = current_overmap.get_unused_overmap_square() //curious on why theyre "reset" instead of deleted; ask mark
 	overmap_move(results["x"], results["y"])
 
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
@@ -137,9 +147,7 @@
 		Rename(planet.name)
 		token.name = "[planet.name]"
 
-	token.icon_state = planet.icon_state
-	token.desc = planet.desc
-	token.color = planet.color
+	alter_token_appearance()
 	ruin_type = planet.ruin_type
 	default_baseturf = planet.default_baseturf
 	gravity = planet.gravity
@@ -162,6 +170,19 @@
 	if(!preserve_level)
 		token.desc += " It may not still be here if you leave it."
 		token.update_appearance()
+
+/datum/overmap/dynamic/alter_token_appearance()
+	if(!planet)
+		return ..()
+	token_icon_state = planet.icon_state
+	desc = planet.desc
+	default_color = planet.color
+	..()
+	if(current_overmap.override_object_colors)
+		token.color = current_overmap.primary_color
+	current_overmap.post_edit_token_state(src)
+
+
 
 /datum/overmap/dynamic/proc/gen_planet_name()
 	. = ""
@@ -191,7 +212,7 @@
 
 	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
 	var/selected_ruin = template || (ruin_type ? pickweightAllowZero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
-	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(src, selected_ruin)
+	var/list/dynamic_encounter_values = current_overmap.spawn_dynamic_encounter(src, selected_ruin)
 	if(!length(dynamic_encounter_values))
 		return FALSE
 
@@ -204,6 +225,7 @@
 
 /datum/overmap/dynamic/empty
 	name = "Empty Space"
+	token_icon_state = "signal_ship"
 
 /datum/overmap/dynamic/empty/choose_level_type()
 	return
@@ -214,6 +236,9 @@
 	log_shuttle("[src] [REF(src)] UNLOAD")
 	qdel(src)
 
+/datum/overmap/dynamic/spaceruin
+	name = "wreckage"
+	force_encounter = RUINTYPE_SPACE
 
 /*
 	OVERMAP ENCOUNTER AREAS
