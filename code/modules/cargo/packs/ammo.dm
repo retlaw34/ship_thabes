@@ -9,7 +9,7 @@
 /datum/supply_pack/ammo/co9mm_mag
 	name = "9mm Commander Magazine Crate"
 	desc = "Contains a 9mm magazine for the standard-issue Commander pistol, containing ten rounds."
-	contains = list(/obj/item/ammo_box/magazine/co9mm,)
+	contains = list(/obj/item/ammo_box/magazine/co9mm)
 	cost = 500
 
 /datum/supply_pack/ammo/m45_mag
@@ -311,6 +311,17 @@
 	contains = list(/obj/item/stock_parts/cell/gun)
 	cost = 500
 
+/datum/supply_pack/ammo/guncell_good
+	name = "Upgraded Weapon Cell Crate"
+	desc = "Contains a better weapon cell, compatible with laser guns."
+	contains = list(/obj/item/stock_parts/cell/gun/upgraded)
+	cost = 1000
+
+/datum/supply_pack/ammo/guncell_pgf
+	name = "PGF Weapon Cell Crate"
+	desc = "Contains a better weapon cell, compatible with laser guns. Why the PGF military is giving this to you is beyond you."
+	contains = list(/obj/item/stock_parts/cell/gun/pgf)
+	cost = 1000
 /datum/supply_pack/ammo/guncell/kalix
 	name = "Etherbor Cell Crate"
 	desc = "Contains an Etherbor weapon cell, compatible with Etherbor armaments with a slightly higher capacity."
